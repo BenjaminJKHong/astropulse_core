@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ASTROGUARD — Mission Overview",
-  description: "ASTROGUARD astronaut health monitoring mission control.",
+  title: "ASTROPULSE — Mission Overview",
+  description: "ASTROPULSE astronaut health monitoring mission control.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

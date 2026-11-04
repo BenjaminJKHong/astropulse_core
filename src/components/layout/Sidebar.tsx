@@ -16,7 +16,7 @@ export function Sidebar() {
       <div className="brand-lockup">
         <span className="brand-mark" aria-hidden="true">A</span>
         <span className="brand-copy">
-          <span className="brand-name">ASTROGUARD</span>
+          <span className="brand-name">ASTROPULSE</span>
           <span className="brand-caption">MISSION CONTROL</span>
         </span>
       </div>
