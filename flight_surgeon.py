@@ -22,10 +22,9 @@ class AIFlightSurgeon:
         """
         print("Groq AI Flight Surgeon initialized.")
 
-    async def analyze_vitals(self, vitals_batch):
+    async def analyze_vitals(self, current_hr, current_spo2):
         try:
-            latest = vitals_batch[-1]
-            prompt = f"Latest Vitals: HR={latest['heart_rate']} BPM, SpO2={latest['spo2']}%. Assess immediately."
+            prompt = f"Latest Vitals: HR={current_hr} BPM, SpO2={current_spo2}%. Assess immediately."
             
             # Call Groq's lightning-fast LLaMA 3 model
             response = await self.client.chat.completions.create(

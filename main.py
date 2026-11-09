@@ -56,11 +56,14 @@ async def websocket_telemetry(websocket: WebSocket):
         vitals_batch = []
         last_ai_message = '{"agent": "AstroPulse AI", "triage_level": "GREEN", "diagnosis": "Awaiting initial 5-second telemetry batch..."}'
 
-        # Helper function to run the teleanalysis in the background
+       # Helper function to run the teleanalysis in the background
         async def fetch_ai_diagnosis(batch):
             nonlocal last_ai_message
             try:
-                last_ai_message = await ai_surgeon.analyze_vitals(batch)
+                # Extract the newest numbers from the batch
+                latest = batch[-1]
+                # Pass the exact numbers to Meththani's AI
+                last_ai_message = await ai_surgeon.analyze_vitals(latest["heart_rate"], latest["spo2"])
             except Exception as e:
                 print(f"Background AI Task Error: {e}")
 
